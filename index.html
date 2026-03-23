@@ -7,31 +7,27 @@
   <meta name="description" content="Private 1-1 coaching for men in business who are ready to close the gap between where they are and how they thought it would feel." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black: #0c0c21;
-      --dark: #f6f6ff;
-      --dark2: #eeeeff;
-      --blue: #2d409a;
-      --blue-light: #3d52b8;
-      --orange: #d45f11;
-      --orange-light: #e8742a;
+      --black: #0d1117;
+      --dark: #111827;
+      --dark2: #1c2a54;
+      --gold: #d45f11;
+      --gold-light: #e8742a;
       --white: #ffffff;
-      --text: #181818;
-      --text-muted: #2c3345;
-      --grey: #6b7280;
-      --border: rgba(0,0,0,0.1);
+      --grey: #8b9ab0;
+      --border: rgba(255,255,255,0.08);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--white);
-      color: var(--text);
+      background: var(--black);
+      color: var(--white);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -45,25 +41,25 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(255,255,255,0.97);
+      background: rgba(13,17,23,0.95);
       backdrop-filter: blur(12px);
-      border-bottom: 2px solid var(--black);
+      border-bottom: 1px solid var(--border);
     }
 
     .logo {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       letter-spacing: 0.05em;
-      color: var(--black);
+      color: var(--white);
       text-decoration: none;
     }
 
-    .logo span { color: var(--blue); }
+    .logo span { color: var(--gold); }
 
     .btn {
       display: inline-block;
       padding: 0.75rem 1.75rem;
-      background: var(--orange);
+      background: var(--gold);
       color: var(--white);
       font-weight: 600;
       font-size: 0.85rem;
@@ -75,15 +71,15 @@
       cursor: pointer;
     }
 
-    .btn:hover { background: var(--orange-light); transform: translateY(-1px); }
+    .btn:hover { background: var(--gold-light); transform: translateY(-1px); }
 
     .btn-outline {
       background: transparent;
-      border: 1px solid var(--orange);
-      color: var(--orange);
+      border: 1px solid var(--gold);
+      color: var(--gold);
     }
 
-    .btn-outline:hover { background: var(--orange); color: var(--white); }
+    .btn-outline:hover { background: var(--gold); color: var(--white); }
 
     .btn-large {
       padding: 1rem 2.5rem;
@@ -101,85 +97,18 @@
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--blue);
+      color: var(--gold);
       margin-bottom: 1rem;
       display: block;
     }
 
-    h1, h2, h3 { font-family: 'Montserrat', sans-serif; line-height: 1.15; color: var(--text); }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.15; }
     h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); }
     h2 { font-size: clamp(2rem, 4vw, 3rem); }
     h3 { font-size: 1.4rem; }
 
-    .divider { width: 50px; height: 2px; background: var(--blue); margin: 1.5rem 0; }
+    .divider { width: 50px; height: 2px; background: var(--gold); margin: 1.5rem 0; }
     .divider-center { margin: 1.5rem auto; }
-
-    /* LIGHT MODE OVERRIDES */
-    #problem, #offer, #process, #forwho, #faq { background: var(--dark); }
-    #reframe, #testimonials, #about { background: var(--white); }
-
-    .problem-intro { color: var(--text-muted); }
-    .problem-intro strong { color: var(--text); }
-    .pain-points li { color: var(--text-muted); background: var(--white); }
-    .pain-points { border-color: #000; }
-    .pain-points li { border-bottom-color: rgba(0,0,0,0.08); }
-    .problem-close { color: var(--grey); }
-    .problem-resolution { background: var(--white); border-color: rgba(0,0,0,0.1); }
-    .problem-resolution p { color: var(--text-muted); }
-
-    .reframe-text p { color: var(--text-muted); }
-    .reframe-text strong { color: var(--text); }
-    .reframe-pull { background: var(--dark); color: var(--text); border-left-color: var(--blue); }
-
-    .offer-description p { color: var(--text-muted); }
-    .offer-includes { border-color: #000; }
-    .offer-includes-header { border-bottom-color: rgba(0,0,0,0.1); }
-    .offer-list li { color: var(--text-muted); border-bottom-color: rgba(0,0,0,0.08); }
-
-    .about-text p { color: var(--text-muted); }
-    .about-text strong { color: var(--text); }
-    .about-credentials { background: #000; border-color: #000; }
-    .credential { background: var(--dark); }
-    .credential-label { color: var(--grey); }
-
-    .process-steps { border-color: #000; }
-    .process-step { border-bottom-color: rgba(0,0,0,0.1); }
-    .step-number { border-right-color: rgba(0,0,0,0.1); color: var(--blue); opacity: 1; }
-    .step-content h4 { color: var(--text); }
-    .step-content p { color: var(--grey); }
-
-    .testimonial-card { background: var(--dark); border-color: rgba(0,0,0,0.1); }
-    .testimonial-card p { color: var(--text-muted); }
-    .testimonial-featured { background: #f0f2ff; border-color: var(--blue); }
-    .testimonial-name { color: var(--blue); }
-    .testimonial-role { color: var(--grey); }
-    .video-row { background: var(--dark); border-color: #000; }
-    .video-row-content blockquote { color: var(--text); }
-    .video-row-name { color: var(--blue); }
-    .video-row-role { color: var(--grey); }
-
-    .forwho-box { border-color: #000; }
-    .forwho-header { border-bottom-color: rgba(0,0,0,0.1); }
-    .forwho-box.yes .forwho-header { background: #f0f2ff; }
-    .forwho-box.no .forwho-header { background: var(--dark2); }
-    .forwho-list li { color: var(--text-muted); border-bottom-color: rgba(0,0,0,0.08); }
-
-    .faq-list { border-color: #000; }
-    .faq-item { border-bottom-color: rgba(0,0,0,0.1); }
-    .faq-question { color: var(--text); }
-    .faq-answer { color: var(--grey); }
-
-    .hero-sub { color: rgba(255,255,255,0.85); }
-    .hero-proof { border-top-color: rgba(255,255,255,0.2); }
-    .proof-label { color: rgba(255,255,255,0.7); }
-    .proof-number { color: var(--orange); }
-
-    #cta { background: var(--black) !important; }
-    #cta h2 { color: var(--white); }
-    .cta-sub { color: rgba(255,255,255,0.7); }
-    .cta-note { color: rgba(255,255,255,0.5); }
-    #apply { background: #f6f6ff !important; }
-    #apply h2, #apply .label { color: var(--text); }
 
     /* HERO */
     #hero {
@@ -208,8 +137,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to bottom, rgba(12,12,33,0.3) 0%, rgba(12,12,33,0.75) 65%, rgba(12,12,33,1) 100%),
-        linear-gradient(to right, rgba(12,12,33,0.85) 0%, rgba(12,12,33,0.2) 100%);
+        linear-gradient(to bottom, rgba(13,17,23,0.3) 0%, rgba(13,17,23,0.75) 65%, rgba(13,17,23,1) 100%),
+        linear-gradient(to right, rgba(13,17,23,0.85) 0%, rgba(13,17,23,0.2) 100%);
       z-index: 1;
     }
 
@@ -222,7 +151,7 @@
 
     #hero h1 em {
       font-style: italic;
-      color: var(--blue);
+      color: var(--gold);
     }
 
     .hero-sub {
@@ -259,9 +188,9 @@
     .proof-stat { }
 
     .proof-number {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
-      color: var(--blue);
+      color: var(--gold);
       display: block;
       line-height: 1;
       margin-bottom: 0.25rem;
@@ -310,7 +239,7 @@
 
     .pain-points li::before {
       content: '—';
-      color: var(--blue);
+      color: var(--gold);
       font-weight: 700;
       flex-shrink: 0;
       margin-top: 0.1rem;
@@ -348,18 +277,18 @@
     .reframe-text strong { color: var(--white); }
 
     .reframe-pull {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(1.4rem, 2.5vw, 1.9rem);
       line-height: 1.4;
       color: var(--white);
       padding: 2.5rem;
-      border-left: 3px solid var(--blue);
+      border-left: 3px solid var(--gold);
       background: var(--dark);
     }
 
     .reframe-pull em {
       font-style: italic;
-      color: var(--blue);
+      color: var(--gold);
     }
 
     /* OFFER */
@@ -386,7 +315,7 @@
 
     .offer-includes {
       border: 1px solid var(--border);
-      background: rgba(45,64,154,0.04);
+      background: rgba(212,95,17,0.04);
     }
 
     .offer-includes-header {
@@ -396,7 +325,7 @@
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--blue);
+      color: var(--gold);
     }
 
     .offer-list {
@@ -418,7 +347,7 @@
 
     .offer-list li::before {
       content: '✓';
-      color: var(--blue);
+      color: var(--gold);
       font-weight: 700;
       flex-shrink: 0;
     }
@@ -444,7 +373,7 @@
     }
 
     .investment-amount {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 2rem;
       color: var(--white);
     }
@@ -505,9 +434,9 @@
     }
 
     .credential-value {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
-      color: var(--blue);
+      color: var(--gold);
       display: block;
       margin-bottom: 0.2rem;
     }
@@ -543,9 +472,9 @@
       justify-content: center;
       padding: 2rem 1rem;
       border-right: 1px solid var(--border);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1.75rem;
-      color: var(--blue);
+      color: var(--gold);
       opacity: 0.5;
     }
 
@@ -554,7 +483,7 @@
     }
 
     .step-content h4 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
       margin-bottom: 0.5rem;
       color: var(--white);
@@ -607,7 +536,7 @@
     }
 
     .video-row-content blockquote {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
       line-height: 1.6;
       color: var(--white);
@@ -618,7 +547,7 @@
     .video-row-name {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--blue);
+      color: var(--gold);
     }
 
     .video-row-role {
@@ -647,9 +576,9 @@
 
     .testimonial-card::before {
       content: '"';
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 5rem;
-      color: var(--blue);
+      color: var(--gold);
       opacity: 0.25;
       position: absolute;
       top: 0.5rem;
@@ -668,7 +597,7 @@
     .testimonial-name {
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--blue);
+      color: var(--gold);
     }
 
     .testimonial-role {
@@ -679,8 +608,8 @@
 
     .testimonial-featured {
       grid-column: span 2;
-      background: rgba(45,64,154,0.05);
-      border-color: rgba(45,64,154,0.3);
+      background: rgba(212,95,17,0.05);
+      border-color: rgba(212,95,17,0.3);
     }
 
     @media (max-width: 700px) {
@@ -715,7 +644,7 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .forwho-box.yes .forwho-header { color: var(--blue); background: rgba(45,64,154,0.06); }
+    .forwho-box.yes .forwho-header { color: var(--gold); background: rgba(212,95,17,0.06); }
     .forwho-box.no .forwho-header { color: var(--grey); background: rgba(255,255,255,0.02); }
 
     .forwho-list {
@@ -733,7 +662,7 @@
 
     .forwho-list li:last-child { border-bottom: none; }
 
-    .forwho-box.yes .forwho-list li::before { content: '→'; color: var(--blue); flex-shrink: 0; }
+    .forwho-box.yes .forwho-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
     .forwho-box.no .forwho-list li::before { content: '×'; color: var(--grey); flex-shrink: 0; }
 
     /* FAQ */
@@ -768,7 +697,7 @@
 
     .faq-question::after {
       content: '+';
-      color: var(--blue);
+      color: var(--gold);
       font-size: 1.25rem;
       font-weight: 300;
       flex-shrink: 0;
@@ -785,7 +714,7 @@
 
     /* FINAL CTA */
     #cta {
-      background: radial-gradient(ellipse at 50% 0%, rgba(45,64,154,0.12) 0%, transparent 65%),
+      background: radial-gradient(ellipse at 50% 0%, rgba(212,95,17,0.12) 0%, transparent 65%),
                   var(--dark);
       text-align: center;
       padding: 8rem 2rem;
@@ -1175,7 +1104,7 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section id="cta" style="background: radial-gradient(ellipse at 50% 0%, rgba(45,64,154,0.12) 0%, transparent 65%), var(--dark); text-align:center; padding: 6rem 2rem 3rem;">
+  <section id="cta" style="background: radial-gradient(ellipse at 50% 0%, rgba(212,95,17,0.12) 0%, transparent 65%), var(--dark); text-align:center; padding: 6rem 2rem 3rem;">
     <div class="container">
       <span class="label" style="display:block; text-align:center;">Ready?</span>
       <h2>The call is free.<br>The change is not.</h2>
@@ -1198,34 +1127,34 @@
         <div style="display: grid; gap: 0;">
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">01 — What's your current role and business?</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">01 — What's your current role and business?</label>
             <input type="text" name="role_and_business" required placeholder="e.g. CEO of a 12-person engineering firm" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
           </div>
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">02 — What's your biggest challenge right now?</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">02 — What's your biggest challenge right now?</label>
             <textarea name="biggest_challenge" required rows="3" placeholder="Be honest — the more specific, the better" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
           </div>
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">03 — What does success look like for you in the next 12 months?</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">03 — What does success look like for you in the next 12 months?</label>
             <textarea name="success_vision" required rows="3" placeholder="Business, personal, both — whatever matters most to you" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
           </div>
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">04 — What's stopped you from getting there so far?</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">04 — What's stopped you from getting there so far?</label>
             <textarea name="blockers" required rows="3" placeholder="No wrong answers here" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
           </div>
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">Your Name & Email</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">Your Name & Email</label>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
               <input type="text" name="name" required placeholder="Your name" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
               <input type="email" name="email" required placeholder="Your email" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
             </div>
           </div>
 
-          <div style="padding: 1.75rem 2rem; background: rgba(45,64,154,0.04);">
+          <div style="padding: 1.75rem 2rem; background: rgba(212,95,17,0.04);">
             <button type="submit" class="btn btn-large">Submit & Book Your Call →</button>
             <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--grey);">After submitting you'll be taken straight to the booking calendar.</p>
           </div>
