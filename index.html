@@ -13,23 +13,25 @@
 
     :root {
       --black: #0c0c21;
-      --dark: #11112e;
-      --dark2: #1a1f4e;
+      --dark: #f6f6ff;
+      --dark2: #eeeeff;
       --blue: #2d409a;
       --blue-light: #3d52b8;
       --orange: #d45f11;
       --orange-light: #e8742a;
       --white: #ffffff;
-      --grey: #8b9ab0;
-      --border: rgba(255,255,255,0.08);
+      --text: #181818;
+      --text-muted: #2c3345;
+      --grey: #6b7280;
+      --border: rgba(0,0,0,0.1);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--black);
-      color: var(--white);
+      background: var(--white);
+      color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -43,16 +45,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(12,12,33,0.95);
+      background: rgba(255,255,255,0.97);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 2px solid var(--black);
     }
 
     .logo {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.1rem;
       letter-spacing: 0.05em;
-      color: var(--white);
+      color: var(--black);
       text-decoration: none;
     }
 
@@ -104,13 +106,80 @@
       display: block;
     }
 
-    h1, h2, h3 { font-family: 'Montserrat', sans-serif; line-height: 1.15; }
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; line-height: 1.15; color: var(--text); }
     h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); }
     h2 { font-size: clamp(2rem, 4vw, 3rem); }
     h3 { font-size: 1.4rem; }
 
     .divider { width: 50px; height: 2px; background: var(--blue); margin: 1.5rem 0; }
     .divider-center { margin: 1.5rem auto; }
+
+    /* LIGHT MODE OVERRIDES */
+    #problem, #offer, #process, #forwho, #faq { background: var(--dark); }
+    #reframe, #testimonials, #about { background: var(--white); }
+
+    .problem-intro { color: var(--text-muted); }
+    .problem-intro strong { color: var(--text); }
+    .pain-points li { color: var(--text-muted); background: var(--white); }
+    .pain-points { border-color: #000; }
+    .pain-points li { border-bottom-color: rgba(0,0,0,0.08); }
+    .problem-close { color: var(--grey); }
+    .problem-resolution { background: var(--white); border-color: rgba(0,0,0,0.1); }
+    .problem-resolution p { color: var(--text-muted); }
+
+    .reframe-text p { color: var(--text-muted); }
+    .reframe-text strong { color: var(--text); }
+    .reframe-pull { background: var(--dark); color: var(--text); border-left-color: var(--blue); }
+
+    .offer-description p { color: var(--text-muted); }
+    .offer-includes { border-color: #000; }
+    .offer-includes-header { border-bottom-color: rgba(0,0,0,0.1); }
+    .offer-list li { color: var(--text-muted); border-bottom-color: rgba(0,0,0,0.08); }
+
+    .about-text p { color: var(--text-muted); }
+    .about-text strong { color: var(--text); }
+    .about-credentials { background: #000; border-color: #000; }
+    .credential { background: var(--dark); }
+    .credential-label { color: var(--grey); }
+
+    .process-steps { border-color: #000; }
+    .process-step { border-bottom-color: rgba(0,0,0,0.1); }
+    .step-number { border-right-color: rgba(0,0,0,0.1); color: var(--blue); opacity: 1; }
+    .step-content h4 { color: var(--text); }
+    .step-content p { color: var(--grey); }
+
+    .testimonial-card { background: var(--dark); border-color: rgba(0,0,0,0.1); }
+    .testimonial-card p { color: var(--text-muted); }
+    .testimonial-featured { background: #f0f2ff; border-color: var(--blue); }
+    .testimonial-name { color: var(--blue); }
+    .testimonial-role { color: var(--grey); }
+    .video-row { background: var(--dark); border-color: #000; }
+    .video-row-content blockquote { color: var(--text); }
+    .video-row-name { color: var(--blue); }
+    .video-row-role { color: var(--grey); }
+
+    .forwho-box { border-color: #000; }
+    .forwho-header { border-bottom-color: rgba(0,0,0,0.1); }
+    .forwho-box.yes .forwho-header { background: #f0f2ff; }
+    .forwho-box.no .forwho-header { background: var(--dark2); }
+    .forwho-list li { color: var(--text-muted); border-bottom-color: rgba(0,0,0,0.08); }
+
+    .faq-list { border-color: #000; }
+    .faq-item { border-bottom-color: rgba(0,0,0,0.1); }
+    .faq-question { color: var(--text); }
+    .faq-answer { color: var(--grey); }
+
+    .hero-sub { color: rgba(255,255,255,0.85); }
+    .hero-proof { border-top-color: rgba(255,255,255,0.2); }
+    .proof-label { color: rgba(255,255,255,0.7); }
+    .proof-number { color: var(--orange); }
+
+    #cta { background: var(--black) !important; }
+    #cta h2 { color: var(--white); }
+    .cta-sub { color: rgba(255,255,255,0.7); }
+    .cta-note { color: rgba(255,255,255,0.5); }
+    #apply { background: #f6f6ff !important; }
+    #apply h2, #apply .label { color: var(--text); }
 
     /* HERO */
     #hero {
