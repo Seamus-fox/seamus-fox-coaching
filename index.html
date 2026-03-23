@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private 1-1 Coaching | Seamus Fox</title>
+  <meta name="description" content="Private 1-1 coaching for men in business who are ready to close the gap between where they are and how they thought it would feel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0d1117;
+      --dark: #111827;
+      --dark2: #1c2a54;
+      --gold: #d45f11;
+      --gold-light: #e8742a;
+      --white: #ffffff;
+      --grey: #8b9ab0;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(13,17,23,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
+
+    .btn-outline:hover { background: var(--gold); color: var(--white); }
+
+    .btn-large {
+      padding: 1rem 2.5rem;
+      font-size: 0.9rem;
+    }
+
+    /* LAYOUT */
+    section { padding: 6rem 2rem; }
+
+    .container { max-width: 860px; margin: 0 auto; }
+    .container-wide { max-width: 1100px; margin: 0 auto; }
+
+    .label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+    h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    h3 { font-size: 1.4rem; }
+
+    .divider { width: 50px; height: 2px; background: var(--gold); margin: 1.5rem 0; }
+    .divider-center { margin: 1.5rem auto; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('seamus.jpg');
+      background-size: cover;
+      background-position: center 20%;
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(13,17,23,0.3) 0%, rgba(13,17,23,0.75) 65%, rgba(13,17,23,1) 100%),
+        linear-gradient(to right, rgba(13,17,23,0.85) 0%, rgba(13,17,23,0.2) 100%);
+      z-index: 1;
+    }
+
+    #hero .container { position: relative; z-index: 2; }
+
+    #hero h1 {
+      max-width: 750px;
+      margin-bottom: 1.75rem;
+    }
+
+    #hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--grey);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-proof {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .proof-stat { }
+
+    .proof-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .proof-label {
+      font-size: 0.75rem;
+      color: var(--grey);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* PROBLEM */
+    #problem { background: var(--dark); }
+
+    .problem-intro {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.9;
+      max-width: 680px;
+      margin-bottom: 3rem;
+    }
+
+    .problem-intro strong { color: var(--white); font-weight: 600; }
+
+    .pain-points {
+      list-style: none;
+      display: grid;
+      gap: 0;
+      margin-bottom: 3rem;
+      border: 1px solid var(--border);
+    }
+
+    .pain-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+    }
+
+    .pain-points li:last-child { border-bottom: none; }
+
+    .pain-points li::before {
+      content: '—';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .problem-close {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+      line-height: 1.8;
+      max-width: 620px;
+    }
+
+    /* REFRAME */
+    #reframe { background: var(--black); }
+
+    .reframe-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 720px) {
+      .reframe-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    .reframe-text p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.975rem;
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+
+    .reframe-text strong { color: var(--white); }
+
+    .reframe-pull {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      line-height: 1.4;
+      color: var(--white);
+      padding: 2.5rem;
+      border-left: 3px solid var(--gold);
+      background: var(--dark);
+    }
+
+    .reframe-pull em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* OFFER */
+    #offer { background: var(--dark); }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 720px) {
+      .offer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .offer-description p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+
+    .offer-includes {
+      border: 1px solid var(--border);
+      background: rgba(212,95,17,0.04);
+    }
+
+    .offer-includes-header {
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .offer-list {
+      list-style: none;
+    }
+
+    .offer-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1rem 1.75rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+
+    .offer-list li:last-child { border-bottom: none; }
+
+    .offer-list li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .offer-investment {
+      margin-top: 2rem;
+      padding: 1.5rem 1.75rem;
+      border: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .investment-label {
+      font-size: 0.75rem;
+      color: var(--grey);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .investment-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .investment-amount span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--grey);
+    }
+
+    /* ABOUT */
+    #about { background: var(--black); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    .about-image {
+      position: sticky;
+      top: 6rem;
+    }
+
+    .about-image img {
+      width: 100%;
+      display: block;
+      filter: grayscale(15%);
+    }
+
+    .about-text p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.975rem;
+      line-height: 1.9;
+      margin-bottom: 1.1rem;
+    }
+
+    .about-text strong { color: var(--white); }
+
+    .about-credentials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 2.5rem;
+    }
+
+    .credential {
+      background: var(--dark);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .credential-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .credential-label {
+      font-size: 0.72rem;
+      color: var(--grey);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* PROCESS */
+    #process { background: var(--dark); }
+
+    .process-steps {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .process-step:last-child { border-bottom: none; }
+
+    .step-number {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2rem 1rem;
+      border-right: 1px solid var(--border);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: var(--gold);
+      opacity: 0.5;
+    }
+
+    .step-content {
+      padding: 2rem;
+    }
+
+    .step-content h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .step-content p {
+      font-size: 0.875rem;
+      color: var(--grey);
+      line-height: 1.7;
+    }
+
+    /* TESTIMONIALS */
+    #testimonials { background: var(--black); }
+
+    .testimonials-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 700px) {
+      .testimonials-stack { grid-template-columns: 1fr; }
+    }
+
+    .testimonial-card {
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      background: var(--dark);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.25;
+      position: absolute;
+      top: 0.5rem;
+      left: 1.5rem;
+      line-height: 1;
+    }
+
+    .testimonial-card p {
+      font-size: 0.925rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      padding-top: 1.5rem;
+    }
+
+    .testimonial-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .testimonial-role {
+      font-size: 0.78rem;
+      color: var(--grey);
+      margin-top: 0.2rem;
+    }
+
+    .testimonial-featured {
+      grid-column: span 2;
+      background: rgba(212,95,17,0.05);
+      border-color: rgba(212,95,17,0.3);
+    }
+
+    @media (max-width: 700px) {
+      .testimonial-featured { grid-column: span 1; }
+    }
+
+    /* FOR WHO */
+    #forwho { background: var(--dark); }
+
+    .forwho-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 700px) {
+      .forwho-grid { grid-template-columns: 1fr; }
+    }
+
+    .forwho-box {
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .forwho-header {
+      padding: 1rem 1.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .forwho-box.yes .forwho-header { color: var(--gold); background: rgba(212,95,17,0.06); }
+    .forwho-box.no .forwho-header { color: var(--grey); background: rgba(255,255,255,0.02); }
+
+    .forwho-list {
+      list-style: none;
+    }
+
+    .forwho-list li {
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .forwho-list li:last-child { border-bottom: none; }
+
+    .forwho-box.yes .forwho-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+    .forwho-box.no .forwho-list li::before { content: '×'; color: var(--grey); flex-shrink: 0; }
+
+    /* FAQ */
+    #faq { background: var(--black); }
+
+    .faq-list {
+      margin-top: 3rem;
+      border: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-question {
+      padding: 1.5rem 1.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      list-style: none;
+      user-select: none;
+    }
+
+    .faq-question::-webkit-details-marker { display: none; }
+
+    .faq-question::after {
+      content: '+';
+      color: var(--gold);
+      font-size: 1.25rem;
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+
+    details[open] .faq-question::after { content: '−'; }
+
+    .faq-answer {
+      padding: 0 1.75rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--grey);
+      line-height: 1.8;
+    }
+
+    /* FINAL CTA */
+    #cta {
+      background: radial-gradient(ellipse at 50% 0%, rgba(212,95,17,0.12) 0%, transparent 65%),
+                  var(--dark);
+      text-align: center;
+      padding: 8rem 2rem;
+    }
+
+    #cta h2 { margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+    .cta-sub {
+      color: rgba(255,255,255,0.6);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      font-size: 0.975rem;
+      line-height: 1.8;
+    }
+
+    .cta-note {
+      margin-top: 1.25rem;
+      font-size: 0.78rem;
+      color: var(--grey);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    .footer-links a {
+      font-size: 0.78rem;
+      color: var(--grey);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy { font-size: 0.75rem; color: var(--grey); }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.25rem; }
+      header { padding: 1rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="https://seamusfox.com" class="logo">Seamus <span>Fox</span></a>
+    <a href="#cta" class="btn">Book a Call</a>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <span class="label">Private 1-1 Coaching</span>
+      <h1>Most men in business are performing.<br><em>Very few are aligned.</em></h1>
+      <div class="divider"></div>
+      <p class="hero-sub">You've built real success. But if you're honest with yourself, something still feels off — the energy isn't consistent, decisions feel heavier than they should, and somewhere along the way you started playing a version of yourself instead of being him.</p>
+      <div class="hero-cta-group">
+        <a href="#cta" class="btn btn-large">Book a Discovery Call</a>
+        <a href="#offer" class="btn-outline btn">See What's Included</a>
+      </div>
+      <p class="hero-note">Limited availability. Application required.</p>
+      <div class="hero-proof">
+        <div class="proof-stat">
+          <span class="proof-number">21</span>
+          <span class="proof-label">Years Coaching</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-number">100s</span>
+          <span class="proof-label">Leaders Coached</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-number">TEDx</span>
+          <span class="proof-label">Speaker</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-number">200</span>
+          <span class="proof-label">Podcast Episodes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="container">
+      <span class="label">You Already Know Something's Off</span>
+      <h2>You don't need someone<br>to tell you what's wrong.</h2>
+      <div class="divider"></div>
+      <p class="problem-intro">You already sense it. The gap between how things look on the outside and how they actually <strong>feel</strong> on the inside. You're capable — you've proven that. But lately:</p>
+      <ul class="pain-points">
+        <li>Decisions that should be straightforward feel heavy and draining</li>
+        <li>Your energy is inconsistent — some days sharp, others flat with no clear reason</li>
+        <li>You're busy, but not always sure you're moving in the right direction</li>
+        <li>The drive that got you here feels different now — harder to access</li>
+        <li>You hold yourself to a high standard, but you second-guess yourself more than anyone knows</li>
+        <li>Success on the outside. Something quieter and harder to name on the inside.</li>
+      </ul>
+      <p class="problem-close">You've tried harder. You've read the books. You've had the conversations with yourself at 2am.<br><br>But something underneath hasn't shifted. And you're starting to wonder if it ever will.</p>
+    </div>
+  </section>
+
+  <!-- REFRAME -->
+  <section id="reframe">
+    <div class="container">
+      <div class="reframe-grid">
+        <div class="reframe-text">
+          <span class="label">The Real Issue</span>
+          <h2>This isn't a productivity problem.</h2>
+          <div class="divider"></div>
+          <p>The issue isn't your schedule, your habits, or your strategy. You know enough about all of those.</p>
+          <p>It's <strong>alignment</strong>. When what you do every day doesn't match what you actually value at a deep level — your subconscious creates friction. It shows up as procrastination, inconsistency, low energy, or that nagging feeling that something's missing.</p>
+          <p>Most men in business never address this layer. They optimise the outside and wonder why the inside doesn't follow.</p>
+          <p>Value Alignment is the work that changes this. Not motivation. Not mindset hacks. Real, deep work on understanding what actually drives you — and building how you operate around that.</p>
+          <p>When it clicks, everything changes. Not because you're trying harder. Because you're finally <strong>working with yourself instead of against yourself.</strong></p>
+        </div>
+        <div class="reframe-pull">
+          "When men understand themselves properly, their confidence stabilises, their energy returns, and their results improve — without forcing it."
+          <br><br>
+          <em>— Seamus Fox</em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section id="offer">
+    <div class="container">
+      <span class="label">The Engagement</span>
+      <h2>Private 1-1 coaching.<br>Built around you.</h2>
+      <div class="divider"></div>
+      <div class="offer-grid">
+        <div class="offer-description">
+          <p>This is not a course. Not a group programme. Not a template someone else has already been through.</p>
+          <p>This is private, personalised coaching built around who you are, how you're wired, and where you want to go.</p>
+          <p>Every engagement begins with a deep-dive into your values hierarchy — understanding what actually drives your behaviour at a subconscious level, where you have emotional charge, and what's creating friction in your life and business.</p>
+          <p>From there, we work consistently to clear that friction, sharpen your thinking, and build the identity and habits that match the level you want to operate at.</p>
+          <p>The work covers everything — mindset, energy, health, business performance, leadership, and relationships. Whatever is most relevant for you right now.</p>
+          <div class="offer-investment">
+            <div>
+              <span class="investment-label">Monthly Investment</span>
+              <div class="investment-amount">From £1,500 <span>/ month</span></div>
+            </div>
+            <a href="#cta" class="btn">Book a Call</a>
+          </div>
+        </div>
+        <div>
+          <div class="offer-includes">
+            <div class="offer-includes-header">What's Included</div>
+            <ul class="offer-list">
+              <li>Monthly 1-1 coaching sessions (frequency agreed together)</li>
+              <li>Values deep-dive and full alignment framework</li>
+              <li>WhatsApp access between sessions</li>
+              <li>Personalised focus — built around your specific situation</li>
+              <li>Full accountability and direct challenge when needed</li>
+              <li>Work across mindset, energy, health, business and leadership</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container-wide">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="seamus.jpg" alt="Seamus Fox" />
+        </div>
+        <div class="about-text">
+          <span class="label">Your Coach</span>
+          <h2>Seamus Fox</h2>
+          <div class="divider"></div>
+          <p>I've been doing this work for 21 years.</p>
+          <p>I started as a personal trainer — built a studio in Derry from the ground up, grew it into a team of coaches, and eventually sold the business. I've been in the room with people at every level — from someone who can't get out of their own way to CEOs making decisions worth millions.</p>
+          <p>What I've learned is this: <strong>the external work is the easy part. The inner work is where most men stop.</strong></p>
+          <p>I've spoken at TEDx. I've shared stages with world-renowned experts across Ireland and America. I've written a book, hosted almost 200 podcast episodes, and spoken to major companies and their teams.</p>
+          <p>But the work I'm most proud of is private. One man, honest conversations, real change.</p>
+          <p>My approach is direct. I'll challenge you when you need it. I won't let you hide behind your own story. And I'll work harder for your progress than almost anyone else in your life will.</p>
+          <p><strong>If you're looking for someone to validate where you are, I'm not your man. If you're ready to actually change — let's talk.</strong></p>
+          <div class="about-credentials">
+            <div class="credential">
+              <span class="credential-value">21+</span>
+              <span class="credential-label">Years Experience</span>
+            </div>
+            <div class="credential">
+              <span class="credential-value">100s</span>
+              <span class="credential-label">Leaders Coached</span>
+            </div>
+            <div class="credential">
+              <span class="credential-value">TEDx</span>
+              <span class="credential-label">Speaker</span>
+            </div>
+            <div class="credential">
+              <span class="credential-value">~200</span>
+              <span class="credential-label">Podcast Episodes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <span class="label">How It Works</span>
+      <h2>Simple. Direct.<br>No unnecessary complexity.</h2>
+      <div class="divider"></div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h4>Discovery Call</h4>
+            <p>We talk. I want to understand where you are, what's not working, and what you actually want. No pitch. No pressure. You'll know by the end of the call whether this is right for you — and so will I.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h4>Values Deep-Dive</h4>
+            <p>Your first session is a thorough exploration of your values hierarchy — what truly drives you, where you're misaligned, and what's creating the most friction. This session alone changes how most men see themselves.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h4>Ongoing 1-1 Sessions</h4>
+            <p>Regular sessions built entirely around your situation. Not a script. Not a template. Real work on what's actually relevant for you right now — mindset, energy, decisions, performance, leadership.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h4>Between Sessions</h4>
+            <p>WhatsApp access for accountability, questions, and when things come up between calls. The work doesn't stop when the session ends.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <span class="label">Results</span>
+      <h2>What clients say.</h2>
+      <div class="divider"></div>
+      <div class="testimonials-stack">
+        <div class="testimonial-card testimonial-featured">
+          <p>"Seamus has a unique ability to cut through the noise and get to what actually matters. The work we did together directly impacted how I show up as a leader — in business and at home. Best investment I've made in myself."</p>
+          <div class="testimonial-name">Damien McElhinney</div>
+          <div class="testimonial-role">CEO, Autofactors</div>
+        </div>
+        <div class="testimonial-card">
+          <p>"I came in thinking I needed a business strategy. What I got was something far more valuable — clarity on who I am and what I actually want. The results followed from that."</p>
+          <div class="testimonial-name">Colm Barry</div>
+          <div class="testimonial-role">Fund Asset Manager</div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Lost 40lbs and had my best month in business — in the same period. That's not a coincidence. When the inner work is right, everything else moves."</p>
+          <div class="testimonial-name">Private Client</div>
+          <div class="testimonial-role">CEO</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR WHO -->
+  <section id="forwho">
+    <div class="container">
+      <span class="label">Is This For You?</span>
+      <h2>This work isn't for everyone.<br>It doesn't need to be.</h2>
+      <div class="divider"></div>
+      <div class="forwho-grid">
+        <div class="forwho-box yes">
+          <div class="forwho-header">This is for you if…</div>
+          <ul class="forwho-list">
+            <li>You're a man in business — owner, founder, CEO, or senior leader</li>
+            <li>You've achieved real success but something still feels off</li>
+            <li>You want direct, honest coaching — not validation</li>
+            <li>You understand that inner work creates outer results</li>
+            <li>You're ready to do the real work, not just talk about it</li>
+          </ul>
+        </div>
+        <div class="forwho-box no">
+          <div class="forwho-header">This is not for you if…</div>
+          <ul class="forwho-list">
+            <li>You're looking for quick fixes or motivation hits</li>
+            <li>You're not willing to be challenged or held accountable</li>
+            <li>You want someone to agree with your current story</li>
+            <li>You're not prepared to invest in yourself seriously</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <span class="label">Questions</span>
+      <h2>Common questions.</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">How long does the engagement last?</summary>
+          <p class="faq-answer">There's no minimum lock-in. Most clients work with me for 6–12 months. The right length becomes clear once we start working together and you see what's possible.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How many sessions per month?</summary>
+          <p class="faq-answer">Typically 2–4 sessions per month depending on what you need and where you are. We agree this together on the discovery call and can adjust as we go.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Is this just mindset work?</summary>
+          <p class="faq-answer">No. The work covers values, identity, energy, health, business performance, leadership, and relationships — whatever is most relevant for you right now. It's integrated, not compartmentalised. Most clients find the lines between those areas blur quickly anyway.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What's the investment?</summary>
+          <p class="faq-answer">From £1,500/month. The specifics depend on what level of engagement makes sense for your situation. We discuss this on the discovery call — there's no pressure and no hard sell.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How do I know if this is right for me?</summary>
+          <p class="faq-answer">Book the discovery call. If it's not the right fit, I'll tell you honestly. The call is free, there's no obligation, and you'll leave with more clarity regardless of what you decide.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What makes this different from other coaching?</summary>
+          <p class="faq-answer">Most coaching stays at the surface — goals, habits, accountability. This goes deeper. We work at the level of values and identity, which is where behaviour actually comes from. When that layer shifts, the habits and results follow naturally. It's not harder work. It's the right work.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta">
+    <div class="container">
+      <span class="label" style="display:block; text-align:center;">Ready?</span>
+      <h2>The call is free.<br>The change is not.</h2>
+      <div class="divider divider-center"></div>
+      <p class="cta-sub">If something in this page resonated — that's not an accident. Book a discovery call and let's find out if this is the right move for you.</p>
+      <a href="https://calendly.com/enquiries-my3m" target="_blank" class="btn btn-large">Book Your Discovery Call</a>
+      <p class="cta-note">No pressure. No pitch. Just an honest conversation.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="https://seamusfox.com" class="logo">Seamus <span>Fox</span></a>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="mailto:enquiries@seamusfox.com">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 Seamus Fox. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
