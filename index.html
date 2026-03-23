@@ -778,7 +778,7 @@
   <!-- HEADER -->
   <header>
     <a href="https://seamusfox.com" class="logo">Seamus <span>Fox</span></a>
-    <a href="#cta" class="btn">Book a Call</a>
+    <a href="#apply" class="btn">Book a Call</a>
   </header>
 
   <!-- HERO -->
@@ -789,7 +789,7 @@
       <div class="divider"></div>
       <p class="hero-sub">You've built real success. But if you're honest with yourself, something still feels off — the energy isn't consistent, decisions feel heavier than they should, and somewhere along the way you started playing a version of yourself instead of being him.</p>
       <div class="hero-cta-group">
-        <a href="#cta" class="btn btn-large">Book a Discovery Call</a>
+        <a href="#apply" class="btn btn-large">Book a Discovery Call</a>
         <a href="#offer" class="btn-outline btn">See What's Included</a>
       </div>
       <p class="hero-note">Limited availability. Application required.</p>
@@ -871,7 +871,7 @@
           <p>The work covers everything — mindset, energy, health, business performance, leadership, and relationships. Whatever is most relevant for you right now.</p>
           <div class="offer-investment">
             <p style="font-size:0.875rem; color:var(--grey); line-height:1.7;">Investment is discussed on the discovery call. If it's not the right fit, I'll tell you — no pressure, no pitch.</p>
-            <a href="#cta" class="btn">Book a Call</a>
+            <a href="#apply" class="btn">Book a Call</a>
           </div>
         </div>
         <div>
@@ -1005,6 +1005,19 @@
         </div>
       </div>
 
+      <div class="video-testimonial-wrap">
+        <div class="video-row">
+          <div class="video-row-embed">
+            <iframe src="https://www.youtube.com/embed/rMflMcZN2Yc" allowfullscreen></iframe>
+          </div>
+          <div class="video-row-content">
+            <blockquote>"I lost 40lbs in weight and we broke through to have our best month in business."</blockquote>
+            <div class="video-row-name">Jim Fisher</div>
+            <div class="video-row-role">CEO, Jucebox</div>
+          </div>
+        </div>
+      </div>
+
       <div class="testimonials-stack">
         <div class="testimonial-card testimonial-featured">
           <p>"Seamus has a unique ability to cut through the noise and get to what actually matters. The work we did together directly impacted how I show up as a leader — in business and at home. Best investment I've made in myself."</p>
@@ -1091,14 +1104,63 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section id="cta">
+  <section id="cta" style="background: radial-gradient(ellipse at 50% 0%, rgba(212,95,17,0.12) 0%, transparent 65%), var(--dark); text-align:center; padding: 6rem 2rem 3rem;">
     <div class="container">
       <span class="label" style="display:block; text-align:center;">Ready?</span>
       <h2>The call is free.<br>The change is not.</h2>
       <div class="divider divider-center"></div>
-      <p class="cta-sub">If something in this page resonated — that's not an accident. Book a discovery call and let's find out if this is the right move for you.</p>
-      <a href="https://calendly.com/enquiries-my3m" target="_blank" class="btn btn-large">Book Your Discovery Call</a>
-      <p class="cta-note">No pressure. No pitch. Just an honest conversation.</p>
+      <p class="cta-sub">If something in this page resonated — that's not an accident. Answer four quick questions below and I'll be in touch to arrange a call.</p>
+    </div>
+  </section>
+
+  <!-- QUALIFYING FORM -->
+  <section id="apply" style="background: var(--dark); padding: 0 2rem 6rem;">
+    <div class="container">
+      <form name="discovery-call" method="POST" data-netlify="true" action="/thank-you.html" style="border: 1px solid var(--border); overflow: hidden;">
+        <input type="hidden" name="form-name" value="discovery-call" />
+
+        <div style="padding: 2rem 2rem 0; border-bottom: 1px solid var(--border);">
+          <span class="label">Before You Book</span>
+          <p style="font-size: 0.875rem; color: var(--grey); margin-bottom: 2rem;">Four questions. Takes 2 minutes. Helps me prepare for our conversation.</p>
+        </div>
+
+        <div style="display: grid; gap: 0;">
+
+          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">01 — What's your current role and business?</label>
+            <input type="text" name="role_and_business" required placeholder="e.g. CEO of a 12-person engineering firm" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
+          </div>
+
+          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">02 — What's your biggest challenge right now?</label>
+            <textarea name="biggest_challenge" required rows="3" placeholder="Be honest — the more specific, the better" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
+          </div>
+
+          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">03 — What does success look like for you in the next 12 months?</label>
+            <textarea name="success_vision" required rows="3" placeholder="Business, personal, both — whatever matters most to you" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
+          </div>
+
+          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">04 — What's stopped you from getting there so far?</label>
+            <textarea name="blockers" required rows="3" placeholder="No wrong answers here" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
+          </div>
+
+          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">Your Name & Email</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <input type="text" name="name" required placeholder="Your name" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
+              <input type="email" name="email" required placeholder="Your email" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
+            </div>
+          </div>
+
+          <div style="padding: 1.75rem 2rem; background: rgba(212,95,17,0.04);">
+            <button type="submit" class="btn btn-large">Submit & Book Your Call →</button>
+            <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--grey);">After submitting you'll be taken straight to the booking calendar.</p>
+          </div>
+
+        </div>
+      </form>
     </div>
   </section>
 
