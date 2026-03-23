@@ -498,6 +498,64 @@
     /* TESTIMONIALS */
     #testimonials { background: var(--black); }
 
+    .video-testimonial-wrap {
+      margin-bottom: 3rem;
+    }
+
+    .video-row {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--dark);
+    }
+
+    @media (max-width: 720px) {
+      .video-row { grid-template-columns: 1fr; }
+    }
+
+    .video-row-embed {
+      position: relative;
+      padding-bottom: 177.78%;
+      overflow: hidden;
+    }
+
+    .video-row-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .video-row-content {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .video-row-content blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .video-row-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .video-row-role {
+      font-size: 0.78rem;
+      color: var(--grey);
+      margin-top: 0.25rem;
+    }
+
     .testimonials-stack {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -920,6 +978,33 @@
       <span class="label">Results</span>
       <h2>What clients say.</h2>
       <div class="divider"></div>
+
+      <div class="video-testimonial-wrap">
+        <div class="video-row">
+          <div class="video-row-embed">
+            <iframe src="https://www.youtube.com/embed/Jj39KuYUjxw" allowfullscreen></iframe>
+          </div>
+          <div class="video-row-content">
+            <blockquote>"Working with Seamus changed how I lead — in business and in life."</blockquote>
+            <div class="video-row-name">Mark Hutchinson</div>
+            <div class="video-row-role">CEO, Hutchinson Engineering</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-testimonial-wrap">
+        <div class="video-row">
+          <div class="video-row-embed">
+            <iframe src="https://www.youtube.com/embed/gOs5MOS5s_A" allowfullscreen></iframe>
+          </div>
+          <div class="video-row-content">
+            <blockquote>"The clarity I gained working with Seamus has been invaluable for how I run my business."</blockquote>
+            <div class="video-row-name">David Gibson</div>
+            <div class="video-row-role">CEO, Gibson Financial Advising</div>
+          </div>
+        </div>
+      </div>
+
       <div class="testimonials-stack">
         <div class="testimonial-card testimonial-featured">
           <p>"Seamus has a unique ability to cut through the noise and get to what actually matters. The work we did together directly impacted how I show up as a leader — in business and at home. Best investment I've made in myself."</p>
