@@ -7,16 +7,18 @@
   <meta name="description" content="Private 1-1 coaching for men in business who are ready to close the gap between where they are and how they thought it would feel." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black: #0d1117;
-      --dark: #111827;
-      --dark2: #1c2a54;
-      --gold: #d45f11;
-      --gold-light: #e8742a;
+      --black: #0c0c21;
+      --dark: #11112e;
+      --dark2: #1a1f4e;
+      --blue: #2d409a;
+      --blue-light: #3d52b8;
+      --orange: #d45f11;
+      --orange-light: #e8742a;
       --white: #ffffff;
       --grey: #8b9ab0;
       --border: rgba(255,255,255,0.08);
@@ -41,25 +43,25 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(13,17,23,0.95);
+      background: rgba(12,12,33,0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.1rem;
       letter-spacing: 0.05em;
       color: var(--white);
       text-decoration: none;
     }
 
-    .logo span { color: var(--gold); }
+    .logo span { color: var(--blue); }
 
     .btn {
       display: inline-block;
       padding: 0.75rem 1.75rem;
-      background: var(--gold);
+      background: var(--orange);
       color: var(--white);
       font-weight: 600;
       font-size: 0.85rem;
@@ -71,15 +73,15 @@
       cursor: pointer;
     }
 
-    .btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn:hover { background: var(--orange-light); transform: translateY(-1px); }
 
     .btn-outline {
       background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      border: 1px solid var(--orange);
+      color: var(--orange);
     }
 
-    .btn-outline:hover { background: var(--gold); color: var(--white); }
+    .btn-outline:hover { background: var(--orange); color: var(--white); }
 
     .btn-large {
       padding: 1rem 2.5rem;
@@ -97,17 +99,17 @@
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--blue);
       margin-bottom: 1rem;
       display: block;
     }
 
-    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; line-height: 1.15; }
     h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); }
     h2 { font-size: clamp(2rem, 4vw, 3rem); }
     h3 { font-size: 1.4rem; }
 
-    .divider { width: 50px; height: 2px; background: var(--gold); margin: 1.5rem 0; }
+    .divider { width: 50px; height: 2px; background: var(--blue); margin: 1.5rem 0; }
     .divider-center { margin: 1.5rem auto; }
 
     /* HERO */
@@ -137,8 +139,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to bottom, rgba(13,17,23,0.3) 0%, rgba(13,17,23,0.75) 65%, rgba(13,17,23,1) 100%),
-        linear-gradient(to right, rgba(13,17,23,0.85) 0%, rgba(13,17,23,0.2) 100%);
+        linear-gradient(to bottom, rgba(12,12,33,0.3) 0%, rgba(12,12,33,0.75) 65%, rgba(12,12,33,1) 100%),
+        linear-gradient(to right, rgba(12,12,33,0.85) 0%, rgba(12,12,33,0.2) 100%);
       z-index: 1;
     }
 
@@ -151,7 +153,7 @@
 
     #hero h1 em {
       font-style: italic;
-      color: var(--gold);
+      color: var(--blue);
     }
 
     .hero-sub {
@@ -188,9 +190,9 @@
     .proof-stat { }
 
     .proof-number {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 2.2rem;
-      color: var(--gold);
+      color: var(--blue);
       display: block;
       line-height: 1;
       margin-bottom: 0.25rem;
@@ -239,7 +241,7 @@
 
     .pain-points li::before {
       content: '—';
-      color: var(--gold);
+      color: var(--blue);
       font-weight: 700;
       flex-shrink: 0;
       margin-top: 0.1rem;
@@ -277,18 +279,18 @@
     .reframe-text strong { color: var(--white); }
 
     .reframe-pull {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: clamp(1.4rem, 2.5vw, 1.9rem);
       line-height: 1.4;
       color: var(--white);
       padding: 2.5rem;
-      border-left: 3px solid var(--gold);
+      border-left: 3px solid var(--blue);
       background: var(--dark);
     }
 
     .reframe-pull em {
       font-style: italic;
-      color: var(--gold);
+      color: var(--blue);
     }
 
     /* OFFER */
@@ -315,7 +317,7 @@
 
     .offer-includes {
       border: 1px solid var(--border);
-      background: rgba(212,95,17,0.04);
+      background: rgba(45,64,154,0.04);
     }
 
     .offer-includes-header {
@@ -325,7 +327,7 @@
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--blue);
     }
 
     .offer-list {
@@ -347,7 +349,7 @@
 
     .offer-list li::before {
       content: '✓';
-      color: var(--gold);
+      color: var(--blue);
       font-weight: 700;
       flex-shrink: 0;
     }
@@ -373,7 +375,7 @@
     }
 
     .investment-amount {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 2rem;
       color: var(--white);
     }
@@ -434,9 +436,9 @@
     }
 
     .credential-value {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.6rem;
-      color: var(--gold);
+      color: var(--blue);
       display: block;
       margin-bottom: 0.2rem;
     }
@@ -472,9 +474,9 @@
       justify-content: center;
       padding: 2rem 1rem;
       border-right: 1px solid var(--border);
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.75rem;
-      color: var(--gold);
+      color: var(--blue);
       opacity: 0.5;
     }
 
@@ -483,7 +485,7 @@
     }
 
     .step-content h4 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.15rem;
       margin-bottom: 0.5rem;
       color: var(--white);
@@ -536,7 +538,7 @@
     }
 
     .video-row-content blockquote {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.25rem;
       line-height: 1.6;
       color: var(--white);
@@ -547,7 +549,7 @@
     .video-row-name {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--gold);
+      color: var(--blue);
     }
 
     .video-row-role {
@@ -576,9 +578,9 @@
 
     .testimonial-card::before {
       content: '"';
-      font-family: 'Playfair Display', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 5rem;
-      color: var(--gold);
+      color: var(--blue);
       opacity: 0.25;
       position: absolute;
       top: 0.5rem;
@@ -597,7 +599,7 @@
     .testimonial-name {
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--gold);
+      color: var(--blue);
     }
 
     .testimonial-role {
@@ -608,8 +610,8 @@
 
     .testimonial-featured {
       grid-column: span 2;
-      background: rgba(212,95,17,0.05);
-      border-color: rgba(212,95,17,0.3);
+      background: rgba(45,64,154,0.05);
+      border-color: rgba(45,64,154,0.3);
     }
 
     @media (max-width: 700px) {
@@ -644,7 +646,7 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .forwho-box.yes .forwho-header { color: var(--gold); background: rgba(212,95,17,0.06); }
+    .forwho-box.yes .forwho-header { color: var(--blue); background: rgba(45,64,154,0.06); }
     .forwho-box.no .forwho-header { color: var(--grey); background: rgba(255,255,255,0.02); }
 
     .forwho-list {
@@ -662,7 +664,7 @@
 
     .forwho-list li:last-child { border-bottom: none; }
 
-    .forwho-box.yes .forwho-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+    .forwho-box.yes .forwho-list li::before { content: '→'; color: var(--blue); flex-shrink: 0; }
     .forwho-box.no .forwho-list li::before { content: '×'; color: var(--grey); flex-shrink: 0; }
 
     /* FAQ */
@@ -697,7 +699,7 @@
 
     .faq-question::after {
       content: '+';
-      color: var(--gold);
+      color: var(--blue);
       font-size: 1.25rem;
       font-weight: 300;
       flex-shrink: 0;
@@ -714,7 +716,7 @@
 
     /* FINAL CTA */
     #cta {
-      background: radial-gradient(ellipse at 50% 0%, rgba(212,95,17,0.12) 0%, transparent 65%),
+      background: radial-gradient(ellipse at 50% 0%, rgba(45,64,154,0.12) 0%, transparent 65%),
                   var(--dark);
       text-align: center;
       padding: 8rem 2rem;
@@ -1104,7 +1106,7 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section id="cta" style="background: radial-gradient(ellipse at 50% 0%, rgba(212,95,17,0.12) 0%, transparent 65%), var(--dark); text-align:center; padding: 6rem 2rem 3rem;">
+  <section id="cta" style="background: radial-gradient(ellipse at 50% 0%, rgba(45,64,154,0.12) 0%, transparent 65%), var(--dark); text-align:center; padding: 6rem 2rem 3rem;">
     <div class="container">
       <span class="label" style="display:block; text-align:center;">Ready?</span>
       <h2>The call is free.<br>The change is not.</h2>
@@ -1127,34 +1129,34 @@
         <div style="display: grid; gap: 0;">
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">01 — What's your current role and business?</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">01 — What's your current role and business?</label>
             <input type="text" name="role_and_business" required placeholder="e.g. CEO of a 12-person engineering firm" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
           </div>
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">02 — What's your biggest challenge right now?</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">02 — What's your biggest challenge right now?</label>
             <textarea name="biggest_challenge" required rows="3" placeholder="Be honest — the more specific, the better" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
           </div>
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">03 — What does success look like for you in the next 12 months?</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">03 — What does success look like for you in the next 12 months?</label>
             <textarea name="success_vision" required rows="3" placeholder="Business, personal, both — whatever matters most to you" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
           </div>
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">04 — What's stopped you from getting there so far?</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">04 — What's stopped you from getting there so far?</label>
             <textarea name="blockers" required rows="3" placeholder="No wrong answers here" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
           </div>
 
           <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">Your Name & Email</label>
+            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;">Your Name & Email</label>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
               <input type="text" name="name" required placeholder="Your name" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
               <input type="email" name="email" required placeholder="Your email" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
             </div>
           </div>
 
-          <div style="padding: 1.75rem 2rem; background: rgba(212,95,17,0.04);">
+          <div style="padding: 1.75rem 2rem; background: rgba(45,64,154,0.04);">
             <button type="submit" class="btn btn-large">Submit & Book Your Call →</button>
             <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--grey);">After submitting you'll be taken straight to the booking calendar.</p>
           </div>
