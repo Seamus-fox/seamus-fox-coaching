@@ -271,13 +271,7 @@
 
     .pain-points li:last-child { border-bottom: none; }
 
-    .pain-points li::before {
-      content: '—';
-      color: var(--gold);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
+    .pain-points li::before { display: none; }
 
     .problem-close {
       font-size: 1rem;
@@ -379,12 +373,7 @@
 
     .offer-list li:last-child { border-bottom: none; }
 
-    .offer-list li::before {
-      content: '✓';
-      color: var(--gold);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
+    .offer-list li::before { display: none; }
 
     .offer-investment {
       margin-top: 2rem;
@@ -695,8 +684,8 @@
 
     .forwho-list li:last-child { border-bottom: none; }
 
-    .forwho-box.yes .forwho-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
-    .forwho-box.no .forwho-list li::before { content: '×'; color: var(--grey); flex-shrink: 0; }
+    .forwho-box.yes .forwho-list li::before { display: none; }
+    .forwho-box.no .forwho-list li::before { display: none; }
 
     /* FAQ */
     #faq { background: var(--black); }
@@ -804,6 +793,53 @@
       section { padding: 4rem 1.25rem; }
       header { padding: 1rem 1.25rem; }
     }
+
+    /* ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* KEYWORD PILLS */
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .keywords span {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 0.35rem 0.9rem;
+      border: 1px solid rgba(212,95,17,0.35);
+      background: rgba(212,95,17,0.06);
+    }
+
+    /* LIST ICONS */
+    .list-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--gold);
+    }
+
+    /* SECTION BOX */
+    .section-box {
+      border: 1px solid var(--border);
+      padding: 3rem;
+    }
+    @media (max-width: 600px) {
+      .section-box { padding: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -820,6 +856,13 @@
       <span class="label">Private 1-1 Coaching</span>
       <h1>Most men in business are performing.<br><em>Very few are aligned.</em></h1>
       <div class="divider"></div>
+      <div class="keywords">
+        <span>Mindset</span>
+        <span>Performance</span>
+        <span>Clarity</span>
+        <span>Energy</span>
+        <span>Business</span>
+      </div>
       <p class="hero-sub">Private coaching for men in business who are ready to close the gap between where they are and how they thought it would feel.</p>
       <div class="hero-cta-group">
         <a href="#apply" class="btn btn-large">Book a Discovery Call</a>
@@ -866,36 +909,33 @@
 
   <!-- PROBLEM -->
   <section id="problem">
-    <div class="container">
+    <div class="container fade-up">
       <span class="label">You Already Know Something's Off</span>
       <h2>You don't need someone<br>to tell you what's wrong.</h2>
       <div class="divider"></div>
-      <p class="problem-intro">You already sense it. The gap between how things look on the outside and how they actually <strong>feel</strong> on the inside. You're capable — you've proven that. But lately:</p>
+      <p class="problem-intro">You sense it. The gap between how things look and how they actually <strong>feel</strong>. You've built something real. But lately:</p>
       <ul class="pain-points">
-        <li>Decisions that should be straightforward feel heavy and draining</li>
-        <li>Your energy is inconsistent — some days sharp, others flat with no clear reason</li>
-        <li>You're busy, but not always sure you're moving in the right direction</li>
-        <li>The drive that got you here feels different now — harder to access</li>
-        <li>You hold yourself to a high standard, but you second-guess yourself more than anyone knows</li>
-        <li>Success on the outside. Something quieter and harder to name on the inside.</li>
+        <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v5M10 14v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Decisions that should be straightforward feel heavy and draining</li>
+        <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v5M10 14v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Your energy is inconsistent. Some days sharp, others flat with no clear reason</li>
+        <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v5M10 14v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You're busy, but not always sure you're moving in the right direction</li>
+        <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v5M10 14v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>The drive that got you here feels different now. Harder to access</li>
+        <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v5M10 14v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You hold yourself to a high standard, but second-guess yourself more than anyone knows</li>
+        <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v5M10 14v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Success on the outside. Something quieter and harder to name on the inside</li>
       </ul>
-      <p class="problem-close">You've tried harder. You've read the books. You've had the conversations with yourself at 2am.<br><br>But something underneath hasn't shifted. And you're starting to wonder if it ever will.</p>
     </div>
   </section>
 
   <!-- REFRAME -->
   <section id="reframe">
-    <div class="container">
+    <div class="container fade-up">
       <div class="reframe-grid">
         <div class="reframe-text">
           <span class="label">The Real Issue</span>
           <h2>This isn't a productivity problem.</h2>
           <div class="divider"></div>
           <p>The issue isn't your schedule, your habits, or your strategy. You know enough about all of those.</p>
-          <p>It's <strong>alignment</strong>. When what you do every day doesn't match what you actually value at a deep level — your subconscious creates friction. It shows up as procrastination, inconsistency, low energy, or that nagging feeling that something's missing.</p>
-          <p>Most men in business never address this layer. They optimise the outside and wonder why the inside doesn't follow.</p>
-          <p>Value Alignment is the work that changes this. Not motivation. Not mindset hacks. Real, deep work on understanding what actually drives you — and building how you operate around that.</p>
-          <p>When it clicks, everything changes. Not because you're trying harder. Because you're finally <strong>working with yourself instead of against yourself.</strong></p>
+          <p>It's <strong>alignment</strong>. When what you do every day doesn't match what you actually value, your subconscious creates friction. It shows up as procrastination, inconsistency, low energy, or that nagging feeling something's missing.</p>
+          <p>When that alignment shifts, everything changes. Not because you're trying harder. Because you're finally <strong>working with yourself instead of against yourself.</strong></p>
         </div>
         <div class="reframe-pull">
           "When men understand themselves properly, their confidence stabilises, their energy returns, and their results improve — without forcing it."
@@ -908,7 +948,7 @@
 
   <!-- OFFER -->
   <section id="offer">
-    <div class="container">
+    <div class="container fade-up">
       <span class="label">The Engagement</span>
       <h2>Private 1-1 coaching.<br>Built around you.</h2>
       <div class="divider"></div>
@@ -916,9 +956,7 @@
         <div class="offer-description">
           <p>This is not a course. Not a group programme. Not a template someone else has already been through.</p>
           <p>This is private, personalised coaching built around who you are, how you're wired, and where you want to go.</p>
-          <p>Every engagement begins with a deep-dive into your values hierarchy — understanding what actually drives your behaviour at a subconscious level, where you have emotional charge, and what's creating friction in your life and business.</p>
-          <p>From there, we work consistently to clear that friction, sharpen your thinking, and build the identity and habits that match the level you want to operate at.</p>
-          <p>The work covers everything — mindset, energy, health, business performance, leadership, and relationships. Whatever is most relevant for you right now.</p>
+          <p>Every engagement begins with a deep-dive into your values hierarchy. We identify what's driving your behaviour, where the friction is, and clear it. From there, we build the identity and habits that match the level you want to operate at.</p>
           <div class="offer-investment">
             <p style="font-size:0.875rem; color:var(--grey); line-height:1.7;">Investment is discussed on the discovery call. If it's not the right fit, I'll tell you — no pressure, no pitch.</p>
             <a href="#apply" class="btn">Book a Call</a>
@@ -928,12 +966,12 @@
           <div class="offer-includes">
             <div class="offer-includes-header">What's Included</div>
             <ul class="offer-list">
-              <li>Monthly 1-1 coaching sessions (frequency agreed together)</li>
-              <li>Values deep-dive and full alignment framework</li>
-              <li>WhatsApp access between sessions</li>
-              <li>Personalised focus — built around your specific situation</li>
-              <li>Full accountability and direct challenge when needed</li>
-              <li>Work across mindset, energy, health, business and leadership</li>
+              <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>1-1 coaching sessions (frequency agreed together)</li>
+              <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Values deep-dive and full alignment framework</li>
+              <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>WhatsApp access between sessions</li>
+              <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalised. Built around your specific situation</li>
+              <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Full accountability and direct challenge when needed</li>
+              <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Covers mindset, energy, health, business and leadership</li>
             </ul>
           </div>
         </div>
@@ -943,7 +981,7 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="container-wide">
+    <div class="container-wide fade-up">
       <div class="about-grid">
         <div class="about-image">
           <img src="seamus.jpg" alt="Seamus Fox" />
@@ -985,7 +1023,7 @@
 
   <!-- PROCESS -->
   <section id="process">
-    <div class="container">
+    <div class="container fade-up">
       <span class="label">How It Works</span>
       <h2>Simple. Direct.<br>No unnecessary complexity.</h2>
       <div class="divider"></div>
@@ -1024,7 +1062,7 @@
 
   <!-- TESTIMONIALS -->
   <section id="testimonials">
-    <div class="container">
+    <div class="container fade-up">
       <span class="label">Results</span>
       <h2>What clients say.</h2>
       <div class="divider"></div>
@@ -1090,7 +1128,7 @@
 
   <!-- FOR WHO -->
   <section id="forwho">
-    <div class="container">
+    <div class="container fade-up">
       <span class="label">Is This For You?</span>
       <h2>This work isn't for everyone.<br>It doesn't need to be.</h2>
       <div class="divider"></div>
@@ -1098,20 +1136,20 @@
         <div class="forwho-box yes">
           <div class="forwho-header">This is for you if…</div>
           <ul class="forwho-list">
-            <li>You're a man in business — owner, founder, CEO, or senior leader</li>
-            <li>You've achieved real success but something still feels off</li>
-            <li>You want direct, honest coaching — not validation</li>
-            <li>You understand that inner work creates outer results</li>
-            <li>You're ready to do the real work, not just talk about it</li>
+            <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You're a man in business. Owner, founder, CEO, or senior leader</li>
+            <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You've achieved real success but something still feels off</li>
+            <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You want direct, honest coaching. Not validation</li>
+            <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You understand that inner work creates outer results</li>
+            <li><svg class="list-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You're ready to do the real work, not just talk about it</li>
           </ul>
         </div>
         <div class="forwho-box no">
           <div class="forwho-header">This is not for you if…</div>
           <ul class="forwho-list">
-            <li>You're looking for quick fixes or motivation hits</li>
-            <li>You're not willing to be challenged or held accountable</li>
-            <li>You want someone to agree with your current story</li>
-            <li>You're not prepared to invest in yourself seriously</li>
+            <li><svg class="list-icon" viewBox="0 0 20 20" fill="none" style="color:var(--grey)"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 7l6 6M13 7l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You're looking for quick fixes or motivation hits</li>
+            <li><svg class="list-icon" viewBox="0 0 20 20" fill="none" style="color:var(--grey)"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 7l6 6M13 7l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You're not willing to be challenged or held accountable</li>
+            <li><svg class="list-icon" viewBox="0 0 20 20" fill="none" style="color:var(--grey)"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 7l6 6M13 7l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You want someone to agree with your current story</li>
+            <li><svg class="list-icon" viewBox="0 0 20 20" fill="none" style="color:var(--grey)"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 7l6 6M13 7l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>You're not prepared to invest in yourself seriously</li>
           </ul>
         </div>
       </div>
@@ -1154,63 +1192,14 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section id="cta" style="background: radial-gradient(ellipse at 50% 0%, rgba(212,95,17,0.12) 0%, transparent 65%), var(--dark); text-align:center; padding: 6rem 2rem 3rem;">
-    <div class="container">
+  <section id="apply" style="background: radial-gradient(ellipse at 50% 0%, rgba(212,95,17,0.12) 0%, transparent 65%), var(--dark); text-align:center; padding: 8rem 2rem; scroll-margin-top: 5rem;">
+    <div class="container fade-up">
       <span class="label" style="display:block; text-align:center;">Ready?</span>
       <h2>The call is free.<br>The change is not.</h2>
       <div class="divider divider-center"></div>
-      <p class="cta-sub">If something in this page resonated — that's not an accident. Answer four quick questions below and I'll be in touch to arrange a call.</p>
-    </div>
-  </section>
-
-  <!-- QUALIFYING FORM -->
-  <section id="apply" style="background: var(--dark); padding: 4rem 2rem 6rem; scroll-margin-top: 5rem;">
-    <div class="container">
-      <form name="discovery-call" method="POST" data-netlify="true" action="/thank-you.html" style="border: 1px solid var(--border); overflow: hidden;">
-        <input type="hidden" name="form-name" value="discovery-call" />
-
-        <div style="padding: 2rem 2rem 0; border-bottom: 1px solid var(--border);">
-          <span class="label">Before You Book</span>
-          <p style="font-size: 0.875rem; color: var(--grey); margin-bottom: 2rem;">Four questions. Takes 2 minutes. Helps me prepare for our conversation.</p>
-        </div>
-
-        <div style="display: grid; gap: 0;">
-
-          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">01 — What's your current role and business?</label>
-            <input type="text" name="role_and_business" required placeholder="e.g. CEO of a 12-person engineering firm" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
-          </div>
-
-          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">02 — What's your biggest challenge right now?</label>
-            <textarea name="biggest_challenge" required rows="3" placeholder="Be honest — the more specific, the better" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
-          </div>
-
-          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">03 — What does success look like for you in the next 12 months?</label>
-            <textarea name="success_vision" required rows="3" placeholder="Business, personal, both — whatever matters most to you" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
-          </div>
-
-          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">04 — What's stopped you from getting there so far?</label>
-            <textarea name="blockers" required rows="3" placeholder="No wrong answers here" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
-          </div>
-
-          <div style="padding: 1.75rem 2rem; border-bottom: 1px solid var(--border);">
-            <label style="display:block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">Your Name & Email</label>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-              <input type="text" name="name" required placeholder="Your name" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
-              <input type="email" name="email" required placeholder="Your email" style="width:100%; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 0.875rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;" />
-            </div>
-          </div>
-
-          <div style="padding: 1.75rem 2rem; background: rgba(212,95,17,0.04);">
-            <button type="submit" class="btn btn-large">Submit & Book Your Call →</button>
-            <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--grey);">After submitting you'll be taken straight to the booking calendar.</p>
-          </div>
-
-        </div>
-      </form>
+      <p class="cta-sub">If something on this page resonated, that's not an accident. Book a free 30-minute Clarity Call and let's find out what's holding you back.</p>
+      <a href="https://calendly.com/enquiries-my3m/30min" target="_blank" class="btn btn-large">Book Your Free Clarity Call</a>
+      <p class="cta-note">No pitch. No pressure. You'll leave with clarity regardless of what you decide.</p>
     </div>
   </section>
 
@@ -1226,6 +1215,13 @@
       <p class="footer-copy">© 2026 Seamus Fox. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
